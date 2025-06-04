@@ -56,10 +56,10 @@ graph TD
     A[Blynk App]
     B[Wi-Fi + Firebase]
     C[ESP32 Microcontroller]
-    D1[Sensors: DHT11, LDR, Ultrasonic]
+    D1[Sensors: DHT11, LDR, Ultrasonic Sensor]
     D2[Actuators: Relay Module, LEDs]
-    D3[Camera: ESP32-CAM]
-    D4[Display: 16x2 LCD (I2C)]
+    D3[Camera Module: ESP32-CAM]
+    D4[Display Module: 16x2 LCD (I2C)]
 
     A --> B
     B --> C
@@ -67,6 +67,7 @@ graph TD
     C --> D2
     C --> D3
     C --> D4
+
 
 
 📈 Future Improvements

@@ -74,7 +74,7 @@ Ctrl IQ Home is a smart home automation project that brings intelligent control,
               +----------+
 
 
-
+---
 
 📈 Future Improvements
 Add voice control using Google Assistant

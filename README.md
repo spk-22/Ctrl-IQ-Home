@@ -51,22 +51,28 @@ Ctrl IQ Home is a smart home automation project that brings intelligent control,
 
 ## 📐 System Architecture
 
-```mermaid
-graph TD
-    A[Blynk App]
-    B[Wi-Fi + Firebase]
-    C[ESP32 Microcontroller]
-    D1[Sensors: DHT11, LDR, Ultrasonic Sensor]
-    D2[Actuators: Relay Module, LEDs]
-    D3[Camera Module: ESP32-CAM]
-    D4[Display Module: 16x2 LCD (I2C)]
+                   +--------------------+
+                   |     Blynk App      |
+                   | (Mobile Interface) |
+                   +---------+----------+
+                             |
+               +-------------v-------------+
+               |     Wi-Fi + Firebase      |
+               | (Cloud Communication)     |
+               +-------------+-------------+
+                             |
+                     +-------v--------+
+                     |     ESP32      |
+                     | (Main MCU Unit)|
+                     +--+------+------+--+-------------------------------+
+                        |      |         |             |                |
+              +---------+  +---+--+   +--+----+    +----+----+      +----+----+
+              | Sensors  |  |Relay |   |Camera |    | Display |      |  LEDs   |
+              | DHT11    |  |Module|   |ESP32- |    | 16x2 LCD|      | Status  |
+              | LDR      |  |      |   | CAM   |    |   (I2C) |      | Lights  |
+              | UltraSonic| +------+   +-------+    +---------+      +---------+
+              +----------+
 
-    A --> B
-    B --> C
-    C --> D1
-    C --> D2
-    C --> D3
-    C --> D4
 
 
 

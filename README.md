@@ -10,8 +10,6 @@ Ctrl IQ Home is a smart home automation project that brings intelligent control,
 - 💡 **Automatic Light Control** with LDR Sensor
 - 🛡️ **Proximity Detection** via Ultrasonic Sensor
 - 🔌 **Appliance Control** using Relay Module
-- 📺 **Real-Time LCD Display** for feedback
-- 📷 **Camera Surveillance** using ESP32-CAM
 - 📲 **Remote Monitoring and Control** using Blynk App
 - ☁️ **Cloud Sync & Storage** with Firebase Realtime Database
 - 💡 **Visual Feedback** using LEDs
@@ -22,15 +20,14 @@ Ctrl IQ Home is a smart home automation project that brings intelligent control,
 ## 🛠️ Hardware Used
 
 - ESP32 Dev Board (Wi-Fi)
-- ESP32-CAM Module
 - DHT11 Temperature and Humidity Sensor
 - LDR Sensor
 - Ultrasonic Sensor (HC-SR04)
 - Relay Module (2/4 Channel)
-- 16x2 LCD with I2C Module
 - LEDs and Resistors
 - Breadboard & Jump Wires
 - Power Supply/USB Cable
+- Pump auto-control
 
 ---
 
@@ -39,7 +36,6 @@ Ctrl IQ Home is a smart home automation project that brings intelligent control,
 - **Arduino IDE** (Firmware development)
 - **Blynk App** (Mobile interface)
 - **Firebase** (Cloud backend)
-- **Pandas, Streamlit** (for possible UI/dashboard extensions)
 - Arduino Libraries:
   - `DHT`
   - `LiquidCrystal_I2C`
@@ -66,11 +62,11 @@ Ctrl IQ Home is a smart home automation project that brings intelligent control,
                      | (Main MCU Unit)|
                      +--+------+------+--+-------------------------------+
                         |      |         |             |                |
-              +---------+  +---+--+   +--+----+    +----+----+      +----+----+
-              | Sensors  |  |Relay |   |Camera |    | Display |      |  LEDs   |
-              | DHT11    |  |Module|   |ESP32- |    | 16x2 LCD|      | Status  |
-              | LDR      |  |      |   | CAM   |    |   (I2C) |      | Lights  |
-              | UltraSonic| +------+   +-------+    +---------+      +---------+
+              +---------+   +---+--+   +--+-----+    +----+----+      +----+----+
+              | Sensors  |  |Relay |   | Dc Fan |    | Display |      |  LEDs   |
+              | DHT11    |  |Module|   |  LEDs  |    | 16x2 LCD|      | Status  |
+              | LDR      |  |      |   |  Pump  |    |   (I2C) |      | Lights  |
+              |Ultrasonic|  +------+   +--------+    +---------+      +---------+
               +----------+
 
 
